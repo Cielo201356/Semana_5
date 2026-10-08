@@ -1,0 +1,70 @@
+AUDITORIA DE LA APLICACION DE LISTA DE TAREAS
+
+Proyecto: Semana_5
+Fecha: 2026-10-07
+
+1. OBJETIVO
+Se reviso la aplicacion para verificar la funcionalidad, la estabilidad basica y los puntos de mejora del proyecto desarrollado en HTML, CSS y JavaScript.
+
+2. ARCHIVOS REVISADOS
+- index.html
+- styles.css
+- script.js
+
+3. RESUMEN EJECUTIVO
+La aplicacion cumple con la funcionalidad basica de una lista de tareas: agregar tareas, eliminarlas y guardar el estado en localStorage. La estructura es simple y entendible, y la validacion inicial para evitar tareas vacias funciona correctamente.
+
+El proyecto se encuentra en un estado usable como MVP, pero requiere mejoras en robustez, accesibilidad y experiencia de usuario para ser mas profesional y estable.
+
+4. HALLAZGOS DETECTADOS
+
+4.1. Validacion de localStorage
+- Riesgo: Medio
+- Descripcion: Si localStorage contiene un valor corrupto o no valido, JSON.parse puede lanzar un error y romper la aplicacion.
+- Recomendacion: Encapsular la lectura en try/catch y validar que el contenido devuelto sea un arreglo.
+
+4.2. Duplicados de tareas
+- Riesgo: Bajo
+- Descripcion: No existe control para evitar que una misma tarea se repita varias veces.
+- Recomendacion: Normalizar el texto y validar si la tarea ya existe antes de agregarla.
+
+4.3. Accesibilidad limitada
+- Riesgo: Medio
+- Descripcion: El campo de entrada funciona, pero la UX no tiene mejoras para teclado, foco y lectura por lector de pantalla.
+- Recomendacion: Agregar label asociado, mejorar foco visual, y permitir enviar la tarea con la tecla Enter.
+
+4.4. Mantenimiento de datos por indice
+- Riesgo: Medio
+- Descripcion: La eliminacion se hace por indice, lo cual puede volverse frágil si la lista cambia de forma inesperada o si se modifica el arreglo manualmente.
+- Recomendacion: Usar un identificador unico para cada tarea y eliminar por ese valor.
+
+4.5. Funcionalidad limitada
+- Riesgo: Bajo
+- Descripcion: La aplicacion solo permite agregar y borrar tareas; no incluye editar, completar, filtrar ni ordenar.
+- Recomendacion: Si se requiere una experiencia mas completa, ampliar la app con estas funciones.
+
+5. PUNTOS FUERTES
+- HTML bien estructurado y claro.
+- Persistencia con localStorage simple y efectiva.
+- Validacion básica para evitar cadenas vacias.
+- Uso de textContent para evitar inyeccion por HTML directo.
+- Sintaxis JavaScript correcta y verificada.
+
+6. VALIDACION REALIZADA
+Se verifico la sintaxis de script.js con el comando:
+- node --check script.js
+
+Resultado: OK
+
+7. CONCLUSION
+La aplicacion cumple con su objetivo principal y puede considerarse una base funcional correcta. Sin embargo, existe margen de mejora en robustez, accesibilidad y escalabilidad. La prioridad recomendada es fortalecer la lectura de localStorage, mejorar la validacion de tareas y preparar la estructura para un manejo mas seguro de los elementos.
+
+8. RECOMENDACION FINAL
+Se recomienda continuar con una segunda version mejorada, aplicando:
+- validacion robusta de datos,
+- control de duplicados,
+- eliminacion por identificador,
+- mejor accesibilidad,
+- soporte para edicion y estado completado.
+
+
