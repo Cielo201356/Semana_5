@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background:#f7f8fb; color:#1c2333; }
+main { max-width:480px; margin:40px auto; padding:20px; background:#fff; border-radius:10px; }
+.agregar { display:flex; gap:8px; }
+input { flex:1; padding:8px; border:1px solid #ccc; border-radius:6px; }
+button { padding:8px 14px; background:#2f6fed; color:#fff; border:none; border-radius:6px; cursor:pointer; }
+.error { color:#d64545; font-size:.85rem; display:block; min-height:1.2em; margin-top:4px; }
+ul { list-style:none; padding:0; margin-top:16px; }
+li { display:flex; justify-content:space-between; align-items:center; padding:8px; border-bottom:1px solid #e2e5ec; }
+li button { background:#d64545; padding:4px 10px; font-size:.8rem; }
