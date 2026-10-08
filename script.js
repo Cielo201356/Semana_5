@@ -2,7 +2,6 @@ const input = document.getElementById("tarea");
 const boton = document.getElementById("agregar");
 const errorSpan = document.getElementById("tarea-error");
 const lista = document.getElementById("lista");
-const vistaAuditoria = document.getElementById("auditoria-preview");
 
 function cargarTareas() {
   const guardadas = localStorage.getItem("tareas");
@@ -13,20 +12,6 @@ let tareas = cargarTareas();
 
 function guardarTareas() {
   localStorage.setItem("tareas", JSON.stringify(tareas));
-}
-
-async function cargarVistaAuditoria() {
-  try {
-    const respuesta = await fetch("AUDITOR");
-    if (!respuesta.ok) {
-      throw new Error(`No se pudo cargar el informe (${respuesta.status}).`);
-    }
-    vistaAuditoria.textContent = await respuesta.text();
-  } catch (error) {
-    vistaAuditoria.textContent =
-      "No se pudo cargar la vista previa. Usa el enlace para abrir el informe completo.";
-    console.error("Error al cargar la auditoría:", error);
-  }
 }
 
 function renderizar() {
@@ -67,4 +52,3 @@ lista.addEventListener("click", function (event) {
 });
 
 renderizar();
-cargarVistaAuditoria();
