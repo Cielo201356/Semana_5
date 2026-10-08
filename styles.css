@@ -8,3 +8,10 @@ button { padding:8px 14px; background:#2f6fed; color:#fff; border:none; border-r
 ul { list-style:none; padding:0; margin-top:16px; }
 li { display:flex; justify-content:space-between; align-items:center; padding:8px; border-bottom:1px solid #e2e5ec; }
 li button { background:#d64545; padding:4px 10px; font-size:.8rem; }
+.auditoria { margin-top:32px; padding-top:20px; border-top:1px solid #e2e5ec; }
+.auditoria h2 { margin:0 0 12px; font-size:1.2rem; }
+.auditoria details { color:#1c2333; }
+.auditoria summary { color:#2f6fed; cursor:pointer; font-weight:600; }
+.auditoria pre { max-height:420px; overflow:auto; padding:14px; background:#f7f8fb; border:1px solid #e2e5ec; border-radius:6px; font: .85rem/1.5 Arial, sans-serif; white-space:pre-wrap; overflow-wrap:anywhere; }
+.auditoria a { color:#2f6fed; }
+button:focus-visible, input:focus-visible, summary:focus-visible, a:focus-visible { outline:3px solid #1c2333; outline-offset:2px; }
